@@ -3,1607 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr Yiadh Laafif - Médecin, Hypnothérapeute & Coach Expert | Paris</title>
-    <meta name="description" content="Expert en coaching, hypnothérapie, Ennéagramme et PCM. 20+ ans d'expérience. Accompagnement individuel et entreprise à Paris.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #00a99d;
-            --primary-dark: #008c82;
-            --secondary: #4a90e2;
-            --purple: #9b59b6;
-            --orange: #e67e22;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --text: #333;
-            --text-light: #666;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Header */
-        header {
-            background: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            font-weight: normal;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        .btn {
-            padding: 0.7rem 1.8rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,169,157,0.3);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(230, 245, 243, 0.9), rgba(200, 235, 230, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23e6f5f3;stop-opacity:1" /><stop offset="100%" style="stop-color:%23c8ebe6;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="600"/><circle cx="200" cy="200" r="150" fill="%2300a99d" opacity="0.1"/><circle cx="1000" cy="400" r="200" fill="%234a90e2" opacity="0.1"/></svg>');
-            padding: 6rem 0 4rem;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hero-text h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-text p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .hero-profile {
-            width: 100%;
-            max-width: 350px;
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .hero-profile.photo-placeholder {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .credentials {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-        
-        .credential-icon {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-item p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        /* Services Section */
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border-top: 4px solid var(--primary);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .service-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .icon-teal { background: var(--primary); }
-        .icon-blue { background: var(--secondary); }
-        .icon-purple { background: var(--purple); }
-        .icon-green { background: #27ae60; }
-        .icon-orange { background: var(--orange); }
-        .icon-violet { background: #8e44ad; }
-        
-        .service-card h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .service-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            color: var(--text);
-        }
-        
-        .service-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.8rem;
-            position: relative;
-            font-size: 0.95rem;
-        }
-        
-        .service-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        /* Service Filter */
-        .service-filter {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .filter-btn {
-            padding: 0.7rem 1.5rem;
-            margin: 0 0.5rem 1rem;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Expertise Section */
-        .expertise {
-            background: var(--light);
-        }
-        
-        .expertise-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        
-        .expertise-bio h3 {
-            color: var(--dark);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .expertise-bio p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .expertise-highlights {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        
-        .expertise-highlights h4 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-        
-        .expertise-highlights ul {
-            list-style: none;
-        }
-        
-        .expertise-highlights li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text);
-            border-bottom: 1px solid #eee;
-        }
-        
-        .expertise-highlights li:last-child {
-            border-bottom: none;
-        }
-        
-        .expertise-highlights li:before {
-            content: "★";
-            position: absolute;
-            left: 0;
-            color: var(--orange);
-        }
-        
-        /* Personality Analysis Section */
-        .personality-analysis {
-            background: white;
-        }
-        
-        .analysis-methods {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .method-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .method-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .method-card h3 {
-            color: var(--dark);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-        }
-        
-        .method-card h4 {
-            color: var(--primary);
-            margin: 1.5rem 0 0.8rem;
-            font-size: 1.1rem;
-        }
-        
-        .method-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .method-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-        
-        .method-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text);
-        }
-        
-        .method-card li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-        
-        .enneagram-types {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .type-badge {
-            background: white;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        /* Hypnotherapy Section */
-        .hypnotherapy {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5f3 100%);
-        }
-        
-        .hypno-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-            align-items: center;
-        }
-        
-        .hypno-image {
-            background: linear-gradient(135deg, rgba(0,169,157,0.1), rgba(74,144,226,0.1));
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .hypno-image h3 {
-            color: var(--dark);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hypno-specialties {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        .specialty {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .specialty.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .specialty:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-        
-        .specialty h4 {
-            color: var(--dark);
-            margin-bottom: 0.7rem;
-            font-size: 1.1rem;
-        }
-        
-        .specialty p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* Corporate Training Section */
-        .corporate {
-            background: var(--dark);
-            color: white;
-        }
-        
-        .corporate .section-header h2,
-        .corporate .section-header p {
-            color: white;
-        }
-        
-        .corporate-programs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .program-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .program-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .program-card:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-5px);
-        }
-        
-        .program-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .program-card p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .program-card ul {
-            list-style: none;
-        }
-        
-        .program-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: rgba(255,255,255,0.9);
-        }
-        
-        .program-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-        
-        /* Resources Section */
-        .resources {
-            background: var(--light);
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .resource-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .resource-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .resource-header {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .resource-content {
-            padding: 2rem;
-        }
-        
-        .resource-content h4 {
-            color: var(--dark);
-            margin-bottom: 0.8rem;
-        }
-        
-        .resource-content p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .resource-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .resource-link:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            background: white;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .testimonial-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-radius: 12px;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .testimonial-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .testimonial-card:before {
-            content: """;
-            position: absolute;
-            top: 1rem;
-            left: 1.5rem;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-        }
-        
-        .testimonial-text {
-            color: var(--text);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .author-info h5 {
-            color: var(--dark);
-            margin-bottom: 0.2rem;
-        }
-        
-        .author-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-        }
-        
-        .contact .section-header h2,
-        .contact .section-header p {
-            color: white;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        
-        .form-group label {
-            display: block;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .form-group.focused label {
-            color: var(--primary);
-            transform: translateY(-5px);
-            font-size: 0.9rem;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.6);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transform: translateY(10px);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,169,157,0.3);
-        }
-        
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero-content,
-            .expertise-content,
-            .analysis-methods,
-            .hypno-grid,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .services-grid,
-            .corporate-programs,
-            .resources-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hypno-specialties,
-            .enneagram-types {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-profile {
-                max-width: 280px;
-                height: 320px;
-            }
-            
-            .filter-btn {
-                margin: 0.25rem;
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Success Message */
-        .success-message {
-            display: none;
-            background: #27ae60;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .success-message.show {
-            display: block;
-        }
-        
-        /* Keyboard Navigation */
-        .keyboard-navigation *:focus {
-            outline: 2px solid var(--primary) !important;
-            outline-offset: 2px !important;
-        }
-        
-        /* Loading State */
-        .loading {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .loaded {
-            opacity: 1;
-        }
-    </style>
+    <title>Dr Yiadh Laafif | Médecin, Hypnothérapeute & Coach en Entreprise</title>
+    <meta name="description" content="Ancien CEO Pharma, le Dr Yiadh Laafif vous accompagne avec une approche intégrative unique (médecine, hypnose, coaching) vers l'équilibre et la performance.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    Dr Yiadh Laafif
-                    <div class="logo-subtitle">Expert en Coaching & Hypnothérapie</div>
-                </div>
-                <button class="mobile-menu-btn">☰</button>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#methodes">Méthodes</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#ressources">Ressources</a></li>
-                    <li><a href="#contact" class="btn btn-primary">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation Principale -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#accueil" class="logo">Dr. Yiadh <span>Laafif</span></a>
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#contact" class="btn-nav">Contact & RDV</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Médecin | Hypnothérapeute | Coach de vie & Coach en entreprise</h1>
-                    <p class="hero-subtitle">Expert Ennéagramme & Process Communication</p>
-                    <p>Médecin diplômé de la Faculte de Medecine de Tunis, diplômé de l'ecole d'hypnose du canada,titulaire d'un MBA, j'ai dirigé pendant plus de 20 ans une filiale d'un groupe pharmaceutique international. Aujourd'hui, j'accompagne individus et entreprises vers l'équilibre, le bien-être et la performance grâce à une approche intégrative unique.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
-                        <a href="#services" class="btn btn-secondary">Découvrir mes services</a>
-                    </div>
-                    <div class="credentials">
-                        <div class="credential-item">
-                            <span class="credential-icon">✓</span>
-                            <span>20+ ans d'expérience</span>
-                        </div>
-                        <div class="credential-item">
-                            <span class="credential-icon">✓</span>
-                            <span>Ex-CEO Pharma</span>
-                        </div>
-                        <div class="credential-item">
-                            <span class="credential-icon">✓</span>
-                            <span>MBA UQAM</span>
-                        </div>
-                    </div>
+    <!-- Section Héro / Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Médecin | Hypnothérapeute | Coach</h1>
+            <p class="tagline">Expert Ennéagramme & Process Communication</p>
+            <p class="hero-desc">J'accompagne individus et entreprises vers <strong>l'équilibre, le bien-être et la performance</strong> grâce à une approche intégrative unique.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="number">20+</span>
+                    <span class="label">Années d'expérience</span>
                 </div>
-                <div class="hero-image">
-    <div class="hero-profile">
-        <img src="PhotoYiadh.jpeg" alt="Dr Yiadh Laafif">
-    </div>
-</div>
-                    </div>
+                <div class="stat">
+                    <span class="number">500+</span>
+                    <span class="label">Patients accompagnés</span>
+                </div>
+                <div class="stat">
+                    <span class="number">50+</span>
+                    <span class="label">Entreprises formées</span>
+                </div>
+                <div class="stat">
+                    <span class="number">95%</span>
+                    <span class="label">Satisfaction</span>
+                </div>
+            </div>
+            <a href="#contact" class="btn-hero">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <!-- IMPORTANT: Remplacez 'votre-photo.jpg' par le nom de votre fichier image -->
+            <img src="votre-photo.jpg" alt="Dr Yiadh Laafif, Médecin et Coach professionnel">
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="apropos" class="section about">
+        <div class="container">
+            <h2 class="section-title">Mon Parcours & Mon Approche</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Médecin diplômé de la Faculté de Médecine de Tunis et titulaire d’un MBA de l’UQAM, j’ai dirigé pendant plus de 20 ans une filiale d’un groupe pharmaceutique international.</strong></p>
+                    <p>Cette expérience unique au plus haut niveau du secteur de la santé m’a permis de développer une compréhension fine des enjeux humains, organisationnels et émotionnels au cœur du leadership et de la performance.</p>
+                    <p>Aujourd’hui, je mets cette double expertise – <strong>médicale et managériale</strong> – au service des personnes et des organisations. J’accompagne individus et entreprises à retrouver équilibre, sens et performance à travers une approche intégrative mêlant médecine, hypnothérapie, psychothérapie, coaching et analyse des personnalités.</p>
+                    <p>Mon objectif : vous fournir des outils concrets et scientifiquement fondés pour transformer les défis en leviers de croissance durable.</p>
+                </div>
+                <div class="about-badges">
+                    <div class="badge"><i class="fas fa-stethoscope"></i> Médecin Diplômé</div>
+                    <div class="badge"><i class="fas fa-briefcase"></i> Ex-CEO Pharma</div>
+                    <div class="badge"><i class="fas fa-graduation-cap"></i> MBA UQAM</div>
+                    <div class="badge"><i class="fas fa-brain"></i> Hypnothérapeute Certifié</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Section Services -->
+    <section id="services" class="section services">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Années d'expérience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Patients accompagnés</p>
-                </div>
-                <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Entreprises formées</p>
-                </div>
-                <div class="stat-item">
-                    <h3>95%</h3>
-                    <p>Satisfaction patients</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mes Services</h2>
-                <p>Une approche intégrative pour accompagner votre développement personnel et professionnel</p>
-            </div>
-            
-            <div class="service-filter">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="coaching">Coaching</button>
-                <button class="filter-btn" data-filter="therapie">Thérapie</button>
-                <button class="filter-btn" data-filter="analyse">Analyse</button>
-                <button class="filter-btn" data-filter="medical">Médical</button>
-            </div>
-            
+            <h2 class="section-title">Mes Services</h2>
+            <p class="section-subtitle">Une approche intégrative pour accompagner votre développement personnel et professionnel</p>
             <div class="services-grid">
-                <!-- Coaching Individuel -->
-                <div class="service-card" data-category="coaching">
-                    <div class="service-icon icon-teal">C</div>
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
                     <h3>Coaching Individuel</h3>
                     <p>Accompagnement personnalisé pour atteindre vos objectifs personnels et professionnels.</p>
                     <ul>
-                        <li>Développement personnel et professionnel</li>
+                        <li>Développement personnel/professionnel</li>
                         <li>Gestion du stress et des émotions</li>
-                        <li>Renforcement de la confiance en soi</li>
-                        <li>Clarification des objectifs de vie</li>
                         <li>Transition de carrière</li>
-                        <li>Maîtrise de vos projets</li>
                     </ul>
                 </div>
-
-                <!-- Coaching en Entreprise -->
-                <div class="service-card" data-category="coaching">
-                    <div class="service-icon icon-blue">E</div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
                     <h3>Coaching en Entreprise</h3>
                     <p>Optimisation de la performance individuelle et collective au sein de votre organisation.</p>
                     <ul>
                         <li>Développement du leadership</li>
-                        <li>Intelligence émotionnelle en entreprise</li>
-                        <li>Cohésion et dynamique d'équipe</li>
-                        <li>Gestion du changement organisationnel</li>
-                        <li>Communication interpersonnelle</li>
-                        <li>Résolution de conflits</li>
+                        <li>Intelligence émotionnelle</li>
+                        <li>Gestion du changement</li>
                     </ul>
                 </div>
-
-                <!-- Hypnothérapie -->
-                <div class="service-card" data-category="therapie">
-                    <div class="service-icon icon-purple">H</div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
                     <h3>Hypnothérapie</h3>
                     <p>Thérapie brève pour traiter anxiété, phobies, addictions et améliorer votre bien-être.</p>
                     <ul>
                         <li>Gestion du stress et anxiété</li>
-                        <li>Traitement des phobies</li>
                         <li>Arrêt du tabac et addictions</li>
-                        <li>Troubles du sommeil</li>
                         <li>Confiance et estime de soi</li>
-                        <li>Préparation aux examens/interventions</li>
-                        <li>Atteinte d'objectifs personnels</li>
                     </ul>
                 </div>
-
-                <!-- Analyse des personnalités par Ennéagramme -->
-                <div class="service-card" data-category="analyse">
-                    <div class="service-icon icon-green">9</div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
                     <h3>Analyse Ennéagramme</h3>
                     <p>Outil puissant de connaissance de soi et de développement des relations interpersonnelles.</p>
                     <ul>
-                        <li>Identification de votre type de personnalité</li>
-                        <li>Compréhension approfondie de soi</li>
+                        <li>Identification de votre type</li>
                         <li>Amélioration des relations</li>
-                        <li>Plan de développement personnalisé</li>
                         <li>Gestion des comportements sous stress</li>
-                        <li>Optimisation de votre potentiel</li>
                     </ul>
                 </div>
-
-                <!-- Process Communication (PCM) -->
-                <div class="service-card" data-category="analyse">
-                    <div class="service-icon icon-orange">P</div>
-                    <h3>Process Communication (PCM)</h3>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Process Communication</h3>
                     <p>Méthode scientifique pour améliorer la communication et prévenir les conflits.</p>
                     <ul>
                         <li>Analyse de votre profil PCM</li>
-                        <li>Adaptation de votre communication</li>
-                        <li>Prévention et gestion des conflits</li>
-                        <li>Optimisation des interactions</li>
-                        <li>Motivation et engagement d'équipe</li>
+                        <li>Prévention des conflits</li>
                         <li>Leadership situationnel</li>
                     </ul>
                 </div>
-
-                <!-- Consultation Médicale -->
-                <div class="service-card" data-category="medical">
-                    <div class="service-icon icon-violet">M</div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
                     <h3>Consultation Médicale</h3>
                     <p>Approche médicale globale intégrant santé physique et mentale.</p>
                     <ul>
                         <li>Bilan de santé complet</li>
                         <li>Prévention et conseil santé</li>
-                        <li>Gestion maladies chroniques</li>
-                        <li>Suivi médical personnalisé</li>
-                        <li>Santé mentale en milieu professionnel</li>
+                        <li>Santé mentale en entreprise</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Le reste des sections (Expertise, Méthodes, Formations, etc.) reste identique au code précédent -->
-    <!-- Pour des raisons de longueur, je vais mettre une section de démonstration -->
-
-    <!-- Testimonials Section (démonstration) -->
-    <section class="testimonials">
+    <!-- Section Témoignages -->
+    <section id="temoignages" class="section testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2>Témoignages</h2>
-                <p>Ce que disent mes clients et partenaires</p>
-            </div>
-            
+            <h2 class="section-title">Ils témoignent</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Le Dr Laafif m'a accompagné pendant une période de transition professionnelle difficile. Son expertise m'a permis de mieux me comprendre et de prendre des décisions alignées avec ma personnalité profonde."
+                        <i class="fas fa-quote-left"></i>
+                        <p>Le Dr Laafif m'a accompagné pendant une période de transition professionnelle difficile. Son expertise m'a permis de mieux me comprendre et de prendre des décisions alignées avec ma personnalité profonde.</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SM</div>
-                        <div class="author-info">
-                            <h5>Amel ben H.</h5>
-                            <p>Cadre dirigeante, 45 ans</p>
-                        </div>
+                        <strong>Amel Ben H.</strong>
+                        <span>Cadre dirigeante, 45 ans</span>
                     </div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Les séances d'hypnothérapie ont radicalement changé ma relation avec le stress. En seulement 3 séances, j'ai retrouvé un sommeil réparateur et une sérénité que je pensais perdue depuis des années."
+                        <i class="fas fa-quote-left"></i>
+                        <p>Les séances d'hypnothérapie ont radicalement changé ma relation avec le stress. En seulement 3 séances, j'ai retrouvé un sommeil réparateur et une sérénité que je pensais perdue depuis des années.</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">PD</div>
-                        <div class="author-info">
-                            <h5>Pierre de R.</h5>
-                            <p>Entrepreneur, 52 ans</p>
-                        </div>
+                        <strong>Pierre de R.</strong>
+                        <span>Entrepreneur, 52 ans</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <i class="fas fa-quote-left"></i>
+                        <p>L'intervention en entreprise a transformé la dynamique de notre équipe de direction. Les outils de communication et de gestion des conflits sont maintenant appliqués au quotidien.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Karim S.</strong>
+                        <span>Directeur Général, Industrie</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Section Contact -->
+    <section id="contact" class="section contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Prendre Rendez-vous</h2>
-                <p>Discutons de vos besoins et objectifs lors d'un premier échange sans engagement</p>
-            </div>
-            
-            <div class="contact-content">
+            <h2 class="section-title">Prendre Rendez-vous</h2>
+            <p class="section-subtitle">Discutons de vos besoins et objectifs lors d'un premier échange sans engagement</p>
+            <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Mes Coordonnées</h3>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
-                            <p>laafifyiadh@gmail.com</p>
+                            <strong>Email</strong>
+                            <a href="mailto:laafifyiadh@gmail.com">laafifyiadh@gmail.com</a>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
+                        <i class="fas fa-phone"></i>
                         <div>
-                            <p>+21698324876</p>
+                            <strong>Téléphone</strong>
+                            <a href="tel:+21698324876">+216 98 324 876</a>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Adresse</h4>
-                            <p>15 rue 9 avril Marsa ville Tunis<br>Consultations en présentiel et en ligne</p>
+                            <strong>Adresse</strong>
+                            <span>15 rue 9 avril Marsa ville Tunis<br>Consultations en présentiel et en ligne</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <div class="success-message" id="successMessage">
-                        Votre message a été envoyé avec succès ! Je vous recontacte dans les 24h.
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nom complet *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service souhaité *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="coaching-individuel">Coaching Individuel</option>
-                                <option value="coaching-entreprise">Coaching Entreprise</option>
-                                <option value="hypnotherapie">Hypnothérapie</option>
-                                <option value="enneagramme">Analyse Ennéagramme</option>
-                                <option value="pcm">Process Communication (PCM)</option>
-                                <option value="consultation-medicale">Consultation Médicale</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Votre message *</label>
-                            <textarea id="message" name="message" placeholder="Décrivez brièvement votre situation et vos objectifs..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer votre message</button>
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service intéressé</label>
+                        <select id="service" name="service">
+                            <option value="">Sélectionnez un service</option>
+                            <option value="coaching">Coaching Individuel</option>
+                            <option value="entreprise">Coaching en Entreprise</option>
+                            <option value="hypnose">Hypnothérapie</option>
+                            <option value="enneagramme">Ennéagramme</option>
+                            <option value="pcm">Process Communication</option>
+                            <option value="medical">Consultation Médicale</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message *</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer la demande <i class="fas fa-paper-plane"></i></button>
+                    <p id="formMessage"></p>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Dr Yiadh Laafif</h4>
-                    <p>Médecin, Hypnothérapeute & Coach Expert. Accompagnement personnalisé pour votre développement personnel et professionnel.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Coaching Individuel</a></li>
-                        <li><a href="#services">Coaching Entreprise</a></li>
-                        <li><a href="#services">Hypnothérapie</a></li>
-                        <li><a href="#methodes">Ennéagramme</a></li>
-                        <li><a href="#methodes">Process Communication</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Dr Yiadh Laafif - Médecin, Hypnothérapeute & Coach Expert. Tous droits réservés.</p>
-            </div>
+            <p>&copy; <span id="currentYear"></span> Dr Yiadh Laafif. Médecin, Hypnothérapeute & Coach. Tous droits réservés.</p>
+            <p class="footer-credits">Site conçu pour une communication professionnelle optimale.</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" title="Retour en haut">↑</button>
-
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const navUl = document.querySelector('nav ul');
-            const isActive = navUl.classList.contains('active');
-            
-            navUl.classList.toggle('active');
-            this.textContent = isActive ? '☰' : '✕';
-        });
-
-        // Contact Form Handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !service || !message) {
-                alert('Veuillez remplir tous les champs obligatoires.');
-                return;
-            }
-            
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Veuillez entrer une adresse email valide.');
-                return;
-            }
-            
-            // Simulation envoi
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                const successMessage = document.getElementById('successMessage');
-                successMessage.classList.add('show');
-                
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            }, 1500);
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight - 20;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu
-                    if (window.innerWidth <= 968) {
-                        document.querySelector('nav ul').classList.remove('active');
-                        document.querySelector('.mobile-menu-btn').textContent = '☰';
-                    }
-                }
-            });
-        });
-
-        // Service Filter
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                const services = document.querySelectorAll('.service-card');
-                
-                services.forEach(service => {
-                    if (filter === 'all') {
-                        service.style.display = 'block';
-                    } else {
-                        const category = service.getAttribute('data-category');
-                        service.style.display = category === filter ? 'block' : 'none';
-                    }
-                });
-            });
-        });
-
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Animations au scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observer les éléments à animer
-        document.querySelectorAll('.service-card, .method-card, .specialty, .program-card, .resource-card, .testimonial-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Stats Counter Animation
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statItems = entry.target.querySelectorAll('.stat-item h3');
-                    statItems.forEach(stat => {
-                        const target = parseInt(stat.textContent);
-                        let current = 0;
-                        const increment = target / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                stat.textContent = target + '+';
-                                clearInterval(timer);
-                            } else {
-                                stat.textContent = Math.floor(current) + '+';
-                            }
-                        }, 40);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Form Field Focus Effects
-        document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(field => {
-            field.addEventListener('focus', function() {
-                this.parentElement.classList.add('focused');
-            });
-            
-            field.addEventListener('blur', function() {
-                if (!this.value) {
-                    this.parentElement.classList.remove('focused');
-                }
-            });
-        });
-
-        // Resource Download Simulation
-        document.querySelectorAll('.resource-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const originalText = this.textContent;
-                this.textContent = 'Téléchargement...';
-                
-                setTimeout(() => {
-                    alert('Merci ! Votre ressource a été téléchargée.');
-                    this.textContent = originalText;
-                }, 1000);
-            });
-        });
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelector('nav ul').classList.remove('active');
-                document.querySelector('.mobile-menu-btn').textContent = '☰';
-            }
-            
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-        });
-
-        document.addEventListener('mousedown', function() {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        console.log('Site du Dr Yiadh Laafif - Initialisé avec succès');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
