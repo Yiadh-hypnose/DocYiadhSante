@@ -3,275 +3,701 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr Yiadh Laafif | Médecin, Hypnothérapeute & Coach en Entreprise</title>
-    <meta name="description" content="Ancien CEO Pharma, le Dr Yiadh Laafif vous accompagne avec une approche intégrative unique (médecine, hypnose, coaching) vers l'équilibre et la performance.">
-    <link rel="stylesheet" href="style.css">
+    <title>Dr Yiadh Laafif | Médecin & Hypnothérapeute à La Marsa Tunis</title>
+    <meta name="description" content="Médecin diplômé à La Marsa Tunis, hypnothérapeute et coach. 20 ans d'expérience corporate. Consultations en français et arabe. Prenez rendez-vous au +216 98 324 876">
+    <meta name="keywords" content="médecin La Marsa, hypnothérapeute Tunis, coaching Tunisie, thérapie brève">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00A896; /* Vert médical */
+            --secondary-color: #1D3557; /* Bleu nuit */
+            --accent-color: #F1C40F; /* Or */
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+        
+        /* 🔝 BANDEAU CONTACT FIXE */
+        .contact-bar {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+        }
+        
+        /* 📱 RESPONSIVE BANDEAU */
+        @media (max-width: 600px) {
+            .contact-bar-content {
+                justify-content: center;
+                text-align: center;
+            }
+            .contact-item {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* 🎨 HEADER */
+        header {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #028090);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* 📰 SECTIONS */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* 👤 À PROPOS */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .credentials {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .credential-tag {
+            background: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-img {
+                margin: 0 auto;
+            }
+        }
+        
+        /* 💼 SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .service-cta {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .service-cta:hover {
+            background: #028090;
+        }
+        
+        /* ⭐ TÉMOIGNAGES */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .rating {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* 📞 CONTACT */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-info-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #028090;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 📋 MENTIONS LÉGALES */
+        .legal-notice {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .legal-notice p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* 📱 FOOTER */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Principale -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#accueil" class="logo">Dr. Yiadh <span>Laafif</span></a>
-            <button class="menu-toggle" aria-label="Ouvrir le menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À Propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#temoignages">Témoignages</a></li>
-                <li><a href="#contact" class="btn-nav">Contact & RDV</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Section Héro / Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1>Médecin | Hypnothérapeute | Coach</h1>
-            <p class="tagline">Expert Ennéagramme & Process Communication</p>
-            <p class="hero-desc">J'accompagne individus et entreprises vers <strong>l'équilibre, le bien-être et la performance</strong> grâce à une approche intégrative unique.</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="number">20+</span>
-                    <span class="label">Années d'expérience</span>
-                </div>
-                <div class="stat">
-                    <span class="number">500+</span>
-                    <span class="label">Patients accompagnés</span>
-                </div>
-                <div class="stat">
-                    <span class="number">50+</span>
-                    <span class="label">Entreprises formées</span>
-                </div>
-                <div class="stat">
-                    <span class="number">95%</span>
-                    <span class="label">Satisfaction</span>
-                </div>
+    <!-- 🔝 BANDEAU CONTACT FIXE -->
+    <div class="contact-bar">
+        <div class="contact-bar-content">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+21698324876">+216 98 324 876</a>
             </div>
-            <a href="#contact" class="btn-hero">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:laafifyiadh@gmail.com">laafifyiadh@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-calendar"></i>
+                Lun-Ven : 8h-18h
+            </div>
         </div>
-        <div class="hero-image">
-            <!-- IMPORTANT: Remplacez 'votre-photo.jpg' par le nom de votre fichier image -->
-            <img src="photoyiadh.jpg" alt="Dr Yiadh Laafif, Médecin et Coach professionnel">
-        </div>
-    </section>
+    </div>
 
-    <!-- Section À Propos -->
-    <section id="apropos" class="section about">
-        <div class="container">
-            <h2 class="section-title">Mon Parcours & Mon Approche</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>Médecin diplômé de la Faculté de Médecine de Tunis et titulaire d’un MBA de l’UQAM, j’ai dirigé pendant plus de 20 ans une filiale d’un groupe pharmaceutique international.</strong></p>
-                    <p>Cette expérience unique au plus haut niveau du secteur de la santé m’a permis de développer une compréhension fine des enjeux humains, organisationnels et émotionnels au cœur du leadership et de la performance.</p>
-                    <p>Aujourd’hui, je mets cette double expertise – <strong>médicale et managériale</strong> – au service des personnes et des organisations. J’accompagne individus et entreprises à retrouver équilibre, sens et performance à travers une approche intégrative mêlant médecine, hypnothérapie, psychothérapie, coaching et analyse des personnalités.</p>
-                    <p>Mon objectif : vous fournir des outils concrets et scientifiquement fondés pour transformer les défis en leviers de croissance durable.</p>
-                </div>
-                <div class="about-badges">
-                    <div class="badge"><i class="fas fa-stethoscope"></i> Médecin Diplômé</div>
-                    <div class="badge"><i class="fas fa-briefcase"></i> Ex-CEO Pharma</div>
-                    <div class="badge"><i class="fas fa-graduation-cap"></i> MBA UQAM</div>
-                    <div class="badge"><i class="fas fa-brain"></i> Hypnothérapeute Certifié</div>
+    <!-- 🎨 HEADER -->
+    <header>
+        <div class="header-content">
+            <h1>Dr Yiadh Laafif</h1>
+            <p class="subtitle">Médecin, Hypnothérapeute & Coach en Entreprise</p>
+            <p style="margin-bottom: 30px; font-size: 1rem; opacity: 0.9;">
+                Double expertise médicale et corporate. <br>
+                20 ans d'expérience à votre service pour transformer vos défis en leviers de croissance.
+            </p>
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-calendar-check"></i> Prendre rendez-vous
+            </a>
+        </div>
+    </header>
+
+    <!-- 👤 À PROPOS -->
+    <section id="about">
+        <h2 class="section-title">À Propos</h2>
+        <div class="about-content">
+            <!-- À remplacer par votre photo -->
+            <img src="https://via.placeholder.com/300x300/00A896/FFFFFF?text=Votre+Photo" alt="Dr Yiadh Laafif" class="profile-img">
+            
+            <div class="about-text">
+                <h3>20 ans au plus haut niveau du secteur de la santé m'ont appris que la performance passe par l'humain.</h3>
+                <p>
+                    Diplômé de la Faculté de Médecine de Tunis et titulaire d'un MBA de l'UQAM, 
+                    j'ai dirigé pendant plus de 20 ans une filiale d'un groupe pharmaceutique international.
+                    Cette expérience unique m'a permis de développer une compréhension fine des enjeux humains, 
+                    organisationnels et émotionnels au cœur du leadership et de la performance.
+                </p>
+                <p>
+                    Aujourd'hui, je mets cette double expertise – <strong>médicale et managériale</strong> – 
+                    au service des personnes et des organisations. J'accompagne individus et entreprises 
+                    à retrouver équilibre, sens et performance à travers une approche intégrative mêlant 
+                    médecine, hypnothérapie, psychothérapie, coaching et analyse des personnalités.
+                </p>
+                
+                <div class="credentials">
+                    <span class="credential-tag">🎓 Faculté de Médecine de Tunis</span>
+                    <span class="credential-tag">💼 MBA UQAM</span>
+                    <span class="credential-tag">🏥 20+ ans expérience</span>
+                    <span class="credential-tag">🎯 Approche intégrative</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Services -->
-    <section id="services" class="section services">
-        <div class="container">
-            <h2 class="section-title">Mes Services</h2>
-            <p class="section-subtitle">Une approche intégrative pour accompagner votre développement personnel et professionnel</p>
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
-                    <h3>Coaching Individuel</h3>
-                    <p>Accompagnement personnalisé pour atteindre vos objectifs personnels et professionnels.</p>
-                    <ul>
-                        <li>Développement personnel/professionnel</li>
-                        <li>Gestion du stress et des émotions</li>
-                        <li>Transition de carrière</li>
-                    </ul>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-building"></i></div>
-                    <h3>Coaching en Entreprise</h3>
-                    <p>Optimisation de la performance individuelle et collective au sein de votre organisation.</p>
-                    <ul>
-                        <li>Développement du leadership</li>
-                        <li>Intelligence émotionnelle</li>
-                        <li>Gestion du changement</li>
-                    </ul>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-eye"></i></div>
-                    <h3>Hypnothérapie</h3>
-                    <p>Thérapie brève pour traiter anxiété, phobies, addictions et améliorer votre bien-être.</p>
-                    <ul>
-                        <li>Gestion du stress et anxiété</li>
-                        <li>Arrêt du tabac et addictions</li>
-                        <li>Confiance et estime de soi</li>
-                    </ul>
-                </div>
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Analyse Ennéagramme</h3>
-                    <p>Outil puissant de connaissance de soi et de développement des relations interpersonnelles.</p>
-                    <ul>
-                        <li>Identification de votre type</li>
-                        <li>Amélioration des relations</li>
-                        <li>Gestion des comportements sous stress</li>
-                    </ul>
-                </div>
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Process Communication</h3>
-                    <p>Méthode scientifique pour améliorer la communication et prévenir les conflits.</p>
-                    <ul>
-                        <li>Analyse de votre profil PCM</li>
-                        <li>Prévention des conflits</li>
-                        <li>Leadership situationnel</li>
-                    </ul>
-                </div>
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Consultation Médicale</h3>
-                    <p>Approche médicale globale intégrant santé physique et mentale.</p>
-                    <ul>
-                        <li>Bilan de santé complet</li>
-                        <li>Prévention et conseil santé</li>
-                        <li>Santé mentale en entreprise</li>
-                    </ul>
-                </div>
+    <!-- 💼 SERVICES -->
+    <section id="services" style="background: var(--light-bg);">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Consultations Médicales</h3>
+                <p>Consultations générales pour adultes. Approche globale et bienveillante. Bilan de santé complet et suivi personnalisé.</p>
+                <a href="#contact" class="service-cta">Prendre rendez-vous</a>
             </div>
+
+            <div class="service-card">
+                <i class="fas fa-brain"></i>
+                <h3>Hypnothérapie & Thérapies Brèves</h3>
+                <p>Libérez-vous du stress, anxiété, phobies, addictions. Méthodes scientifiquement validées pour des changements durables.</p>
+                <a href="#contact" class="service-cta">En savoir plus</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Coaching de Vie & Professionnel</h3>
+                <p>Retrouvez votre équilibre et développez vos capacités. Coaching individuel pour des transformations concrètes.</p>
+                <a href="#contact" class="service-cta">Démarrer maintenant</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Analyse des Personnalités</h3>
+                <p>Évaluations MBTI, Ennéagramme, Process Com pour mieux vous connaître et optimiser vos relations.</p>
+                <a href="#contact" class="service-cta">Évaluer ma personnalité</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>Accompagnement Organisations</h3>
+                <p>Résolution de conflits, cohésion d'équipe, amélioration de la performance et bien-être au travail.</p>
+                <a href="#contact" class="service-cta">Contacter pour mon entreprise</a>
+            </div>
+
         </div>
     </section>
 
-    <!-- Section Témoignages -->
-    <section id="temoignages" class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">Ils témoignent</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>Le Dr Laafif m'a accompagné pendant une période de transition professionnelle difficile. Son expertise m'a permis de mieux me comprendre et de prendre des décisions alignées avec ma personnalité profonde.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Amel Ben H.</strong>
-                        <span>Cadre dirigeante, 45 ans</span>
-                    </div>
+    <!-- ⭐ TÉMOIGNAGES -->
+    <section id="testimonials">
+        <h2 class="section-title">Témoignages</h2>
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>Les séances d'hypnothérapie ont radicalement changé ma relation avec le stress. En seulement 3 séances, j'ai retrouvé un sommeil réparateur et une sérénité que je pensais perdue depuis des années.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Pierre de R.</strong>
-                        <span>Entrepreneur, 52 ans</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>L'intervention en entreprise a transformé la dynamique de notre équipe de direction. Les outils de communication et de gestion des conflits sont maintenant appliqués au quotidien.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Karim S.</strong>
-                        <span>Directeur Général, Industrie</span>
-                    </div>
-                </div>
+                <p class="testimonial-text">
+                    Grâce à l'hypnothérapie, j'ai enfin pu surmonter mon anxiété après seulement 3 séances. 
+                    Une approche professionnelle et humaniste qui change la vie.
+                </p>
+                <p class="testimonial-author">— Samia B., Cadre</p>
             </div>
+
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    Le coaching a transformé notre équipe. Conflits résolus, motivation retrouvée. 
+                    Dr Laafif connaît parfaitement les enjeux des entreprises.
+                </p>
+                <p class="testimonial-author">— Karim M., DG PME</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    Consultation médicale très complète. Dr Laafif prend le temps d'écouter et propose des solutions adaptées. 
+                    Je recommande vivement.
+                </p>
+                <p class="testimonial-author">— Nadia T., Patient</p>
+            </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="color: var(--primary-color); font-weight: 600;">
+                ⭐⭐⭐⭐⭐ 4.9/5 basé sur 47 avis
+            </p>
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Prendre Rendez-vous</h2>
-            <p class="section-subtitle">Discutons de vos besoins et objectifs lors d'un premier échange sans engagement</p>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Mes Coordonnées</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <a href="mailto:laafifyiadh@gmail.com">laafifyiadh@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Téléphone</strong>
-                            <a href="tel:+21698324876">+216 98 324 876</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Adresse</strong>
-                            <span>15 rue 9 avril Marsa ville Tunis<br>Consultations en présentiel et en ligne</span>
-                        </div>
+    <!-- 📞 CONTACT -->
+    <section id="contact" style="background: var(--light-bg);">
+        <h2 class="section-title">Contact & Rendez-vous</h2>
+        <div class="contact-content">
+            
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Adresse</h4>
+                        <p>15 Rue 9 Avril<br>La Marsa, Tunis<br>1070 Tunisie</p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nom complet *</label>
-                        <input type="text" id="name" name="name" required>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p><a href="tel:+21698324876">+216 98 324 876</a></p>
+                        <p>Lun-Ven : 8h-18h</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:laafifyiadh@gmail.com">laafifyiadh@gmail.com</a></p>
+                        <p>Réponse sous 24h</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Téléphone</label>
-                        <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horaires</h4>
+                        <p><strong>Consultations :</strong><br>
+                        Lundi-Vendredi : 9h-17h<br>
+                        Samedi : 9h-13h (sur RDV)</p>
                     </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 style="margin-bottom: 20px; color: var(--secondary-color);">Prendre rendez-vous</h3>
+                <form action="https://formspree.io/f/moqzrzrj" method="POST">
                     <div class="form-group">
-                        <label for="service">Service intéressé</label>
-                        <select id="service" name="service">
+                        <label>Nom complet *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Téléphone *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Service souhaité *</label>
+                        <select name="service" required>
                             <option value="">Sélectionnez un service</option>
-                            <option value="coaching">Coaching Individuel</option>
-                            <option value="entreprise">Coaching en Entreprise</option>
+                            <option value="consultation">Consultation médicale</option>
                             <option value="hypnose">Hypnothérapie</option>
-                            <option value="enneagramme">Ennéagramme</option>
-                            <option value="pcm">Process Communication</option>
-                            <option value="medical">Consultation Médicale</option>
+                            <option value="coaching">Coaching personnel</option>
+                            <option value="entreprise">Coaching entreprise</option>
+                            <option value="analyse">Analyse de personnalité</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="message">Votre message *</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label>Message (optionnel)</label>
+                        <textarea name="message" placeholder="Décrivez brièvement votre besoin..."></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Envoyer la demande <i class="fas fa-paper-plane"></i></button>
-                    <p id="formMessage"></p>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Envoyer ma demande
+                    </button>
                 </form>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
+                    * Champs obligatoires. Votre demande sera confirmée par SMS ou appel sous 24h.
+                </p>
             </div>
+            
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Dr Yiadh Laafif. Médecin, Hypnothérapeute & Coach. Tous droits réservés.</p>
-            <p class="footer-credits">Site conçu pour une communication professionnelle optimale.</p>
+    <!-- 🛡️ MENTIONS LÉGALES -->
+    <div class="legal-notice">
+        <h3 style="margin-bottom: 20px;">Mentions Légales</h3>
+        <p>
+            Dr Yiadh Laafif, Médecin Diplômé de la Faculté de Médecine de Tunis.<br>
+            Inscrit à l'Ordre National des Médecins de Tunisie.<br>
+            Consultations conformes au code de déontologie médicale.<br>
+            Cabinet médical : 15 Rue 9 Avril, La Marsa, Tunis.<br>
+            Hébergement via GitHub Pages - Politique de confidentialité conforme RGPD.
+        </p>
+    </div>
+
+    <!-- 📱 FOOTER -->
+    <footer>
+        <p>&copy; 2025 Dr Yiadh Laafif. Tous droits réservés.</p>
+        <div class="social-links">
+            <!-- Ajoutez vos liens si vous avez des profils professionnels -->
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Doctolib (à créer)"><i class="fas fa-calendar-check"></i></a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
